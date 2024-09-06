@@ -13,8 +13,8 @@ a cart to all selected items, an product page, checkout page. This is an simple 
 - _Routing_: React Router [x]
 - _Styling_: Tailwind css [x]
 - _UI State_: Redux toolkit []
-- _Remote State_: React Query []
-- _API's_: fakestoreapi.com for fake data. []
+- _Remote State_: React Router [x]
+- _API's_: fakestoreapi.in for fake data. []
 
 ## Project Routes
 
