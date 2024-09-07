@@ -33,13 +33,9 @@ function CategoriesSelect({ selectedCategory, setSelectedCategory }) {
       onChange={handleCategoryChange}
       value={selectedCategory}
     >
-      <option value="all" key={crypto.randomUUID()}>
-        ALL
-      </option>
+      <option value="all">ALL</option>
       {data.categories.map((item) => (
-        <option value={item.toLowerCase()} key={crypto.randomUUID()}>
-          {item.toUpperCase()}
-        </option>
+        <option value={item.toLowerCase()}>{item.toUpperCase()}</option>
       ))}
     </select>
   );

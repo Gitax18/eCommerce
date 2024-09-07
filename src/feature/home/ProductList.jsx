@@ -21,7 +21,7 @@ function ProductList({ selectedCategory }) {
   if (isError) return <Error />;
 
   return (
-    <ul className="flex flex-wrap items-center justify-between gap-y-8 p-2 my-8">
+    <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-8 p-2 my-8">
       {data.products.map((item) => (
         <ProductItem data={item} key={item.id} />
       ))}

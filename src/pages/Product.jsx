@@ -19,15 +19,18 @@ function Product() {
 
   return (
     <>
-      <div className="absolute top-[6rem] left-6">
+      <div className="absolute top-[5rem] left-2 md:top-[6rem] md:left-6">
         <span>CATEGORY &gt; {data.product.category.toUpperCase()} </span>
       </div>
-      <div className="text-center">
-        <img src={data.product.image} className="h-[34rem] m-auto" />
-        <h1 className="text-3xl font-black w-[60%] m-auto border-b-2 pb-6">
+      <div className="text-center m-auto max-w-screen-2xl w-min-full">
+        <img
+          src={data.product.image}
+          className="h-[24rem] m-auto mt-8 md:h-[34rem] "
+        />
+        <h1 className=" text-2xl px-2 font-bold md:w-[60%] m-auto border-b-2 pb-6 md:font-black md:text-3xl ">
           {data.product.title}
         </h1>
-        <div className="my-10 flex  w-[24rem] items-center justify-between mx-auto">
+        <div className="my-10 px-8 flex  w-full items-center justify-between mx-auto md:w-[50%]">
           <p className="text-2xl font-black">
             ₹ {formatNumberIndian(Number(data.product.price) * 40)}/-
           </p>
@@ -37,7 +40,7 @@ function Product() {
         </div>
         <div>
           <h3 className="text-2xl font-semibold">Description</h3>
-          <p className="w-[60%] mx-auto text-xl tracking-wide my-4">
+          <p className=" mx-auto text-xl tracking-wide px-4 my-4 md:w-[60%]">
             {data.product.description}
           </p>
         </div>
@@ -47,12 +50,14 @@ function Product() {
             {data.product.model}
           </p>
         </div>
-        <div>
-          <h3 className="text-2xl font-semibold">Color</h3>
-          <p className="w-[60%] mx-auto text-xl tracking-wide my-4">
-            {data.product.color.toUpperCase()}
-          </p>
-        </div>
+        {data.product.color && (
+          <div>
+            <h3 className="text-2xl font-semibold">Color</h3>
+            <p className="w-[60%] mx-auto text-xl tracking-wide my-4">
+              {data.product.color?.toUpperCase()}
+            </p>
+          </div>
+        )}
       </div>
     </>
   );
