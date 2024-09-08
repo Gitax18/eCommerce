@@ -19,7 +19,6 @@ function Home() {
         </span>
       </div>
       <div className="">
-        {console.log(selectedCategory)}
         <ProductList selectedCategory={selectedCategory} />
       </div>
     </div>

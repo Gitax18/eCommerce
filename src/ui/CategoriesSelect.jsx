@@ -34,8 +34,10 @@ function CategoriesSelect({ selectedCategory, setSelectedCategory }) {
       value={selectedCategory}
     >
       <option value="all">ALL</option>
-      {data.categories.map((item) => (
-        <option value={item.toLowerCase()}>{item.toUpperCase()}</option>
+      {data.categories.map((item, ind) => (
+        <option value={item.toLowerCase()} key={ind}>
+          {item.toUpperCase()}
+        </option>
       ))}
     </select>
   );
