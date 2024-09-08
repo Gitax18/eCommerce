@@ -30,7 +30,7 @@ function Cart() {
         </h2>
       )}
       {cart.cart.length > 0 && (
-        <ul className="border-2 border-gray-500 rounded-lg w-8/12 p-2 divide-y-4 divide-white m-auto my-10 md:w-4/12">
+        <ul className="border-2 border-gray-500 rounded-lg w-10/12 p-2 divide-y-4 divide-white m-auto my-10 lg:w-6/12">
           {cart.cart.map((item, ind) => (
             <CartItem key={ind} item={item} />
           ))}
