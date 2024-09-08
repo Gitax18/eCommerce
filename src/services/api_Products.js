@@ -9,6 +9,7 @@ export async function getAllProducts() {
 export async function getProductById(id) {
   const res = await fetch(`${URL}/products/${id}`);
   const data = await res.json();
+  data.product = { ...data.product, quantity: 1 };
   return data;
 }
 

@@ -9,6 +9,7 @@ function AppLayout() {
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
 
+  if (isLoading) return <Loader />;
   return (
     <>
       {isLoading && <Loader />}
