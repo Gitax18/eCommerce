@@ -4,10 +4,9 @@ import { formatNumberIndian } from "../../utils/helper";
 import cartContext from "../../context/CartContext";
 import QuantitySelector from "../../ui/QuantitySelector";
 
-function PriceCart({ data }) {
+function PriceCart({ data, isLogin, setShowModal }) {
   const { cart, dispatch } = useContext(cartContext);
   const exists = cart.cart.some((item) => item.id === data.product.id);
-  const isLogin = JSON.parse(localStorage.getItem("userdata"));
 
   return (
     <>
@@ -24,7 +23,10 @@ function PriceCart({ data }) {
             onClick={() => {
               if (isLogin)
                 dispatch({ type: "addToCart", payload: data.product });
-              else alert("please login to purchase product");
+              else {
+                setShowModal(true);
+                setTimeout(() => setShowModal(false), 3000);
+              }
             }}
           >
             add to cart

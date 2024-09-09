@@ -6,9 +6,13 @@ import Error from "../ui/Error";
 import ProductTitle from "../feature/product/ProductTitle";
 import PriceCart from "../feature/product/PriceCart";
 import ProductDetails from "../feature/product/ProductDetails";
+import NotLoginModal from "../feature/product/NotLoginModal";
+import { useState } from "react";
 
 function Product() {
   const { id } = useParams();
+  const [showModal, setShowModal] = useState(false);
+  const isLogin = JSON.parse(localStorage.getItem("userdata"));
 
   // Use React Query to fetch product data by ID
   const { data, isLoading, isError } = useQuery({
@@ -21,12 +25,13 @@ function Product() {
 
   return (
     <>
+      {showModal && <NotLoginModal />}
       <div className="absolute top-[5rem] left-2 md:top-[6rem] md:left-6">
         <span>CATEGORY &gt; {data.product.category.toUpperCase()} </span>
       </div>
       <div className="text-center m-auto max-w-screen-2xl w-min-full">
         <ProductTitle data={data} />
-        <PriceCart data={data} />
+        <PriceCart data={data} isLogin={isLogin} setShowModal={setShowModal} />
         <ProductDetails data={data} />
       </div>
     </>
