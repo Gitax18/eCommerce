@@ -20,10 +20,10 @@ function ModalConfirm() {
 
   return (
     <section
-      className={`absolute top-0 left-0 z-30 bg-black/50 overflow-hidden  w-full flex items-center justify-center `}
+      className={`absolute top-0 left-0 z-30 bg-black/50  overflow-hidden  w-full  `}
       style={{ height: `${rootHeight}px` }}
     >
-      <div className="flex flex-col gap-y-4 items-center justify-center bg-white p-5 rounded-xl">
+      <div className="flex flex-col gap-y-4 items-center justify-center w-11/12 absolute top-[50vh] left-[50vw] -translate-x-2/4 -translate-y-2/4  bg-white p-5 rounded-xl md:mx-0 md:w-fit">
         <img
           src="/checkoutDone.png"
           alt="checkout done logo"
@@ -32,7 +32,7 @@ function ModalConfirm() {
         <h1 className="text-2xl font-bold">
           Your checkout for {totalItems} items have been successfully completed.
         </h1>
-        <hr className="w-10/12 h-1 bg-black/35" />
+        <hr className="w-full rounded-2xl border h-1 bg-black/35 lg:w-10/12" />
         <h2 className="text-2xl font-bold">
           Payment Made of ₹ {formatNumberIndian(cart.total)}
           /-
