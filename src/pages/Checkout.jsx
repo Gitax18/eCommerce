@@ -30,9 +30,9 @@ function Checkout() {
       <h1 className="text-center font-bold text-3xl">Checkout</h1>
       <div className=" flex flex-col py-10 items-center justify-start xl:items-start xl:flex-row">
         <CheckoutForm />
-        <div className="my-10 mx-auto w-8/12 lg:w-6/12 lg:max-h-[50vh] xl:w-4/12 xl:my-0">
+        <div className="my-10 mx-auto w-11/12 lg:w-6/12 lg:max-h-[50vh] xl:w-4/12 xl:my-0">
           <h2 className="text-xl font-semibold lg:text-2xl">Items</h2>
-          <ul className="border-2 border-gray-500 rounded-lg  p-2 divide-y-4 overflow-auto max-h-[100vh] divide-white">
+          <ul className="border-2 border-gray-500 rounded-lg  p-2 divide-y-4 overflow-auto  max-h-[100vh] divide-white">
             {cart.cart.map((item, ind) => (
               <CheckoutItem key={ind} item={item} />
             ))}

@@ -8,14 +8,14 @@ function CartItem({ item }) {
   const { dispatch } = useContext(cartContext);
 
   return (
-    <li className="flex items-center justify-between pr-3 bg-gray-100">
-      <div className="flex items-center  gap-x-4">
+    <li className="flex items-start justify-between pr-3 p-2 bg-gray-100 flex-col gap-y-4 lg:flex-row lg:gap-y-0 md:items-center">
+      <div className="flex items-center gap-x-4">
         <img src={item.image} alt={item.title} className="h-20 rounded-lg" />
         <div>
-          <p className="text-xl font-semibold">
+          <p className="text-base font-semibold lg:text-xl">
             {item.title.split(" ").slice(0, 3).join(" ")}
           </p>
-          <p className="text-xl font-semibold">
+          <p className="text-md font-black mt-1 lg:text-2xl lg:font-bold">
             ₹ {formatNumberIndian(Number(item.price) * 40)}
             /-
           </p>

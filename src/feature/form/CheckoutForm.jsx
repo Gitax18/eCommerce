@@ -52,39 +52,39 @@ function CheckoutForm() {
   return (
     <>
       {showModal && <ModalConfirm />}
-      <div className="bg-gray-100 rounded-xl py-2 m-auto w-8/12 lg:w-[60%]">
+      <div className="bg-gray-100 rounded-xl py-2 m-auto w-11/12 lg:w-[60%]">
         <h1 className="text-center text-3xl font-semibold my-4">
           Shipping Details
         </h1>
         <form
           onSubmit={formik.handleSubmit}
-          className="w-[100%] m-auto flex flex-col gap-y-2 items-center"
+          className="w-[100%] m-auto flex flex-col gap-y-6 items-center lg:gap-y-3"
         >
-          <div className="flex flex-col w-7/12 gap-y-2">
+          <div className="flex flex-col w-11/12 gap-y-2 lg:w-7/12">
             <Input name={"username"} formik={formik} />
             {formik.touched.username && formik.errors.username && (
               <FormError error={formik.errors.username} />
             )}
           </div>
-          <div className="flex flex-col w-7/12 gap-y-2">
+          <div className="flex flex-col w-11/12 gap-y-2 lg:w-7/12">
             <Input name="email" formik={formik} />
             {formik.touched.email && formik.errors.email && (
               <FormError error={formik.errors.email} />
             )}
           </div>
-          <div className="flex flex-col w-7/12 gap-y-2">
+          <div className="flex flex-col w-11/12 gap-y-2 lg:w-7/12">
             <Input name="street1" formik={formik} />
             {formik.touched.street1 && formik.errors.street1 && (
               <FormError error={formik.errors.street1} />
             )}
           </div>
-          <div className="flex flex-col w-7/12 gap-y-2">
+          <div className="flex flex-col w-11/12 gap-y-2 lg:w-7/12">
             <Input name="street2" formik={formik} />
             {formik.touched.street2 && formik.errors.street2 && (
               <FormError error={formik.errors.street2} />
             )}
           </div>
-          <div className="flex flex-col items-center justify-between flex-shrink  w-7/12 gap-y-2 lg:gap-14 lg:flex-row  lg:w-7/12">
+          <div className="flex flex-col items-center justify-between flex-shrink  w-11/12 gap-y-2 lg:gap-14 lg:flex-row  lg:w-7/12">
             <div className="w-full">
               <Input name="city" formik={formik} />
               {formik.touched.city && formik.errors.city && (
@@ -98,7 +98,7 @@ function CheckoutForm() {
               )}
             </div>
           </div>
-          <div className="flex flex-col items-center justify-between flex-shrink  w-7/12 gap-y-2 lg:gap-14 lg:flex-row  lg:w-7/12">
+          <div className="flex flex-col items-center justify-between flex-shrink  w-11/12 gap-y-2 lg:gap-14 lg:flex-row  lg:w-7/12">
             <div className="w-full">
               <Input name="country" formik={formik} />
               {formik.touched.country && formik.errors.country && (
@@ -114,7 +114,7 @@ function CheckoutForm() {
           </div>
           <button
             type="submit"
-            className="border-2 w-7/12 my-4 bg-blue-600 border-blue-600 text-white text-2xl rounded-lg py-2"
+            className="border-2 w-11/12 my-4 bg-blue-600 border-blue-600 text-white text-2xl rounded-lg py-2 lg:w-7/12"
           >
             Submit
           </button>

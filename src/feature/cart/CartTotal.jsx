@@ -14,10 +14,13 @@ function CartTotal() {
     <div className="border-2 flex items-center justify-between border-black rounded-lg p-4 w-10/12 mx-auto lg:w-6/12">
       <div className="flex flex-col justify-center">
         <h2 className="text-xl font-semibold">Total Amount:</h2>
-        <p className="text-2xl font-black"> ₹ {formatNumberIndian(total)} /-</p>
+        <p className="text-xl font-black lg:text-2xl">
+          {" "}
+          ₹ {formatNumberIndian(total)} /-
+        </p>
       </div>
       <button
-        className="border-2 px-6 py-4 rounded-xl text-xl font-semibold bg-blue-800 text-white cursor-pointer"
+        className="border-2 px-4 py-3 rounded-xl text-base font-semibold bg-blue-800 text-white cursor-pointer lg:text-xl lg:px-6 lg:py-4"
         onClick={() => {
           dispatch({ type: "total", payload: total });
           navigate("checkout");

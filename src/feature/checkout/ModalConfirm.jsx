@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import cartContext from "../../context/CartContext";
 import { formatNumberIndian } from "../../utils/helper";
 import { useNavigate } from "react-router-dom";
@@ -9,10 +9,19 @@ function ModalConfirm() {
 
   const totalItems = cart.cart.reduce((acc, item) => (acc += item.quantity), 0);
 
+  const [rootHeight, setRootHeight] = useState("");
+
+  useEffect(() => {
+    const rootElement = document.getElementById("root");
+    if (rootElement) {
+      setRootHeight(String(rootElement.clientHeight));
+    }
+  }, []);
+
   return (
     <section
-      className="absolute top-0 left-0 z-30 bg-black/50 overflow-hidden  h-[109vh] w-full flex items-center justify-center"
-      style={{ overflow: "hidden" }}
+      className={`absolute top-0 left-0 z-30 bg-black/50 overflow-hidden  w-full flex items-center justify-center `}
+      style={{ height: `${rootHeight}px` }}
     >
       <div className="flex flex-col gap-y-4 items-center justify-center bg-white p-5 rounded-xl">
         <img

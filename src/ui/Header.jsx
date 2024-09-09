@@ -5,7 +5,7 @@ function Header() {
   const localstoragedata = JSON.parse(localStorage.getItem("userdata"));
 
   return (
-    <header className="bg-blue-100 h-[10vh] flex items-center justify-between p-2 md:p-10">
+    <header className="bg-blue-100 h-[10vh] flex items-center justify-between p-2 pr-6 md:p-10 ">
       <Logo />
       <ul className="flex items-center justify-center gap-3">
         <li className="text-xl font-semibold">
