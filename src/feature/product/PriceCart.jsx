@@ -17,11 +17,7 @@ function PriceCart({ data }) {
         </p>
 
         {exists ? (
-          <QuantitySelector
-            item={data.product}
-            bgColorClass="bg-blue-200"
-            size={10}
-          />
+          <QuantitySelector item={data.product} bgColorClass="bg-blue-200" />
         ) : (
           <button
             className="border-blue-600 border-2 p-2 bg-blue-200"

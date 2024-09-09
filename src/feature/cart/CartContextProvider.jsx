@@ -43,6 +43,13 @@ function CartContextProvider({ children }) {
         );
         return { ...state, cart: newState };
       }
+      case "emptyCart": {
+        return initialState;
+      }
+      case "total": {
+        return { ...state, total: action.payload };
+      }
+
       default:
         return state;
     }
